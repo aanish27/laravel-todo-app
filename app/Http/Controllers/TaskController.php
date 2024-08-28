@@ -31,15 +31,19 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+
+
         Task::create([
             'title' => $request->title,
             'description' => $request->description,
-            'project_id' => $request->project_id,
-            'user_id' => Auth::id()
+            'priority' => $request -> priority,
+            'user_id' => Auth::id(),
+            'project_id' => $request->project_id
+
         ]);
 
 
-        redirect(route('/'));
+        return redirect(route('task.index'));
     }
 
     /**
@@ -56,7 +60,7 @@ class TaskController extends Controller
     public function edit(string $id)
     {
         return view('task.edit', [
-            'task' => Task::where('id',$id)
+            'task' => Task::find($id)
         ]);
     }
 
@@ -65,10 +69,12 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $id = (int) $id;
         Task::where('id',$id)->update($request-> except([
-            '_token' , '_method'
+            '_token' , '_method','project_id'
         ]));
-        redirect(route('/'));
+
+        return redirect(route('task.index'));
     }
 
     /**
@@ -76,7 +82,7 @@ class TaskController extends Controller
      */
     public function destroy(string $id)
     {
-        Task::where('id',$id)->delete();
-        redirect(route('/'));
+        Task::where('id', $id)->delete();
+        return redirect(route('task.index'));
     }
 }
