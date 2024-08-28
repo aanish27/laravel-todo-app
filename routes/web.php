@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,6 +22,6 @@ Route::middleware('auth')->group(function () {
 
 
 Route::resource('task', TaskController::class);
-Route::resource('category', CategoryController::class);
+Route::resource('project', ProjectController::class);
 
 require __DIR__.'/auth.php';

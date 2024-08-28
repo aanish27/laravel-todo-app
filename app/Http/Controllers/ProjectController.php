@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class TaskController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TaskController extends Controller
     public function index()
     {
         return view('task.index', [
-            'tasks' => Task::all()
+            'projects' => Project::all()
         ]);
     }
 
@@ -23,7 +23,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('task.create');
+        return view('project.create');
     }
 
     /**
@@ -31,10 +31,9 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        Task::create([
+        Project::create([
             'title' => $request->title,
             'description' => $request->description,
-            'project_id' => $request->project_id,
             'user_id' => Auth::id()
         ]);
 
@@ -55,8 +54,8 @@ class TaskController extends Controller
      */
     public function edit(string $id)
     {
-        return view('task.edit', [
-            'task' => Task::where('id',$id)
+        return view('project.edit', [
+            'project' => Project::where('id',$id)
         ]);
     }
 
@@ -65,10 +64,17 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Task::where('id',$id)->update($request-> except([
+
+
+        // Project::update(request()->all());
+        // can do this but...will throw and error sayinng column token and method doesnt exista
+
+
+        Project::where($id)->update($request-> except([
             '_token' , '_method'
         ]));
         redirect(route('/'));
+
     }
 
     /**
@@ -76,7 +82,7 @@ class TaskController extends Controller
      */
     public function destroy(string $id)
     {
-        Task::where('id',$id)->delete();
+        Project::where($id)->delete();
         redirect(route('/'));
     }
 }
