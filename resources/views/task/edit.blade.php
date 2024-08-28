@@ -10,8 +10,7 @@
 
     <form
 
-
-        action="{{ route('task.create') }}"
+        action="{{ route('task.update', $task->id) }}"
 
         method="POST"
         enctype="multipart/form-data">
@@ -32,7 +31,7 @@
             <option value="High">High</option>
         </select>
 
-        
+
         <button type="submit"> Add </button>
     </form>
 

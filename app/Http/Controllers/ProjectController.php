@@ -13,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('task.index', [
+        return view('project.index', [
             'projects' => Project::all()
         ]);
     }
@@ -38,7 +38,7 @@ class ProjectController extends Controller
         ]);
 
 
-        redirect(route('/'));
+        return redirect(route('project.index'));
     }
 
     /**
@@ -55,7 +55,7 @@ class ProjectController extends Controller
     public function edit(string $id)
     {
         return view('project.edit', [
-            'project' => Project::where('id',$id)
+            'project' => Project::find($id)
         ]);
     }
 
@@ -69,11 +69,12 @@ class ProjectController extends Controller
         // Project::update(request()->all());
         // can do this but...will throw and error sayinng column token and method doesnt exista
 
-
-        Project::where($id)->update($request-> except([
+        Project::where('id',$id)->update($request-> except([
             '_token' , '_method'
         ]));
-        redirect(route('/'));
+
+
+        return redirect(route('project.index'));
 
     }
 
@@ -82,7 +83,7 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        Project::where($id)->delete();
-        redirect(route('/'));
+        Project::where('id',$id)->delete();
+        return redirect(route('project.index'));
     }
 }
