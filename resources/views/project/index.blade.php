@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{{ url()->previous() }}" >Back</a>
 
     <h1>Tasks</h1>
     <a href="{{ route('task.index' ) }}">Tasks</a>
 
-    <h1>Projects</h1>
+    <h1 class="">Projects</h1>
 
     <a href="{{ route('project.create') }}"> <b>Add Project</b></a>
 

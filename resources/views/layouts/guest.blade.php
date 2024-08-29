@@ -6,25 +6,28 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @vite(['resources/css/custom.css' ,'resources/css/app.css', 'resources/js/app.js'])
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+
+    </head>
+    <body class="container"   style="background-color:beige;">
+        <div class=" d-flex flex-row align-items-center justify-content-center ">
+            <div class="intro-txt text-left  w-45" >
+                <h1>Unleash Your Productivity with TaskMaster!</h1>
+                <p>Your go-to solution for organizing your tasks and boosting productivity. Whether you’re managing personal goals or coordinating team projects, TaskMaster simplifies your life with a clean, intuitive interface.</p>
+            </div>
+            <div class="intro-page w-45 border-3  ">
                 {{ $slot }}
             </div>
         </div>
+
+    </div>
+
+        <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>

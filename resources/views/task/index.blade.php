@@ -6,7 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>index</title>
 </head>
+
 <body>
+
+    <a href="{{ route('project.index') }}">Projects</a>
+    <br>
+
+    <a href="{{ url()->previous() }}" >Back</a>
+
+
     <h1>index Task</h1>
     <a href="{{ route('task.create') }}">Create</a>
 
