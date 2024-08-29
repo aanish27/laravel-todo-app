@@ -1,0 +1,42 @@
+.container{
+    width: 100vw;
+}
+
+
+.sidebar{
+    width: 20%;
+}
+
+
+
+
+
+#board{
+    background-color: aquamarine;
+}
+
+table, tbody, tr, th, td{
+    font-size: 1.2rem !important;
+    background-color: rgba(0, 0, 0, 0.0) !important;
+
+}
+
+table{
+    margin-left: 65px !important;
+    width: auto ;
+
+}
+
+input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5rem;
+    text-align: center;
+    accent-color: blue;
+  }
+
+
+  .project-title{
+    font-size: 90px;
+    margin: 65px;
+    margin-bottom: 10px;
+  }

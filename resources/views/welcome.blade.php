@@ -9,13 +9,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-                <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @vite(['resources/css/custom.css', 'resources/css/app.css', 'resources/js/app.js'])
         <!-- Styles -->
-        <style>
-        </style>
     </head>
-
-    <div class="container "></div>
+    
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
             <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
@@ -169,7 +167,5 @@
                 </div>
             </div>
         </div>
-        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-
     </body>
 </html>
