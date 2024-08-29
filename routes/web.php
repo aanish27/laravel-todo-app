@@ -3,11 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::resource('/', HomeController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,7 +20,8 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::resource('task', TaskController::class);
-Route::resource('project', ProjectController::class);
+Route::resource('task', TaskController::class)->middleware('auth');
+Route::resource('project', ProjectController::class)->middleware('auth');
+
 
 require __DIR__.'/auth.php';
