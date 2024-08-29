@@ -28,6 +28,19 @@
             <option value="High">High</option>
         </select>
 
+        <label for="priority">Priority</label>
+        <select name="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <label for="status">Status</label>
+
+        <input type="hidden" name="status" value="true">
+
+
+
         <input type="hidden" value="1" name="project_id">
 
         <button

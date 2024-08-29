@@ -31,6 +31,8 @@
             <option value="High">High</option>
         </select>
 
+        <input type="checkbox" name="status" value="1" {{ old('status', $task->status ?? false) ? 'checked' : '' }}>
+
 
         <button type="submit"> Add </button>
     </form>

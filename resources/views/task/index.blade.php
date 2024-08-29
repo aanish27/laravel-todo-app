@@ -21,6 +21,7 @@
     <ul>
         @foreach ( $tasks  as $task)
             <li> {{ $task->title }}</li>
+            <li>{{ $task->description }}</li>
             <li>{{ $task->id }}</li>
             <a href="{{ route('task.edit' , $task->id) }}">Edit</a>
 
