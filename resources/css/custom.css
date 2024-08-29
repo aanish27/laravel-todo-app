@@ -1,3 +1,21 @@
-.intro-css {
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 100px;
+    gap: 50px;
+}
+
+.intro-txt {
     width: 45%;
+}
+
+
+.intro-page{
+    height: 60vh;
+    width: 40%;
+    padding: 20px;
+    background-color: aquamarine;
 }
