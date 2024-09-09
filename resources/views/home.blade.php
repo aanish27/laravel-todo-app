@@ -16,6 +16,15 @@
     <body class="container-fluid m-0 p-0 d-flex  " style="height: 100vh;" >
         <div class="sidebar h-100 bg-black text-light d-flex flex-column align-items-center">
             <div class="text-center  fs-1  p-3">{{ Auth::user()->name }}'s<br>Tasks</div>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-dropdown-link :href="route('logout')"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+            </form>
             <div class=" text-center fs-3  bg-light text-dark w-100"><b>Projects</b></div>
 
             <div class="projects mt-2 d-flex align-items-center flex-column w-75 ">
@@ -29,6 +38,9 @@
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                             </svg>
                         </button>
+
+
+                        
                         <button class="btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
@@ -38,6 +50,9 @@
 
                     </div>
                 </div>
+
+
+
                 {{-- @foreach ($projects as $project)
                 <div class="project card text-center  p-2  m-3 w-100" data-bs-toggle="collapse" data-bs-target=".project-content{{ $project->id }}">
                     <b>{{ $project->title }}</b>
@@ -162,7 +177,7 @@
                 <a href="{{ route('project.index') }}" class="btn">Project</a>
             </ul>
 
-            
+
         </div>
 
     </body>

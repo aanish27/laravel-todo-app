@@ -38,6 +38,10 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+                <br>
+            <a href="{{ route('register') }}" class="link-primary pt-2"  >
+                Sign-Up
+            </a>
 
             <x-primary-button class="btn btn-primary  d-block ">
                 {{ __('Log in') }}
@@ -45,9 +49,7 @@
         </div>
     </form>
 
-    <a href="{{ route('register') }}" class="btn btn-primary m-10"  >
-        Register
-    </a>
+
 
 
 

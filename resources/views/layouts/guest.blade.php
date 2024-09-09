@@ -18,7 +18,7 @@
             <p>Your go-to solution for organizing your tasks and boosting productivity. Whether you’re managing personal goals or coordinating team projects, TaskMaster simplifies your life with a clean, intuitive interface.</p>
         </div>
 
-        <div class="intro-page  ">
+        <div class="intro-page">
             {{ $slot }}
         </div>
 

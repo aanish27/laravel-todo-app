@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" class="row g-3 needs-validation" novalidate>
+    <form method="POST" action="{{ route('register') }}" class="" novalidate>
         @csrf
 
         <!-- Name -->
@@ -47,10 +47,11 @@
             <x-primary-button class=" btn btn-primary  d-block">
                 {{ __('Register') }}
             </x-primary-button>
+
+
         </div>
+    
     </form>
 
-    <a href="{{ route('login') }}" class="btn btn-primary mt-2"  >
-        Login
-    </a>
+
 </x-guest-layout>
