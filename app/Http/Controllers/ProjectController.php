@@ -38,7 +38,7 @@ class ProjectController extends Controller
         ]);
 
 
-        return redirect(route('project.index'));
+        return redirect(route('index'));
     }
 
     /**

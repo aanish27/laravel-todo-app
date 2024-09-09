@@ -49,7 +49,7 @@
                         <input class="form-control m-2" type="text" name="title" id="title" value="{{ $project->title }} " required >
                         <label class="form-label text-start" for="description">Description</label>
                         <input class="form-control m-2" type="text" name="description" id="description" value="{{ $project->description }}" required >
-                        <button class="btn btn-primary align-self-center"> Edit </button>
+                        <button class="btn btn-primary align-self-center"> {{ $project->id }} </button>
                 </form>
                 </div>
 
