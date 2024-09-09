@@ -15,10 +15,8 @@
         enctype="multipart/form-data">
         @csrf
 
-        <label for="title">Title</label>
-        <input type="text" name="title">
 
-        <label for="description">Description</label>
+        <input type="text" name="title">
         <input type="text" name="description">
 
 

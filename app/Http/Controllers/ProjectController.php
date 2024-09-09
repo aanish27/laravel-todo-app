@@ -84,6 +84,6 @@ class ProjectController extends Controller
     public function destroy(string $id)
     {
         Project::where('id',$id)->delete();
-        return redirect(route('project.index'));
+        return redirect(route('index'));
     }
 }
