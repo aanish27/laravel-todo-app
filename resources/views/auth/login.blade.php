@@ -44,4 +44,12 @@
             </x-primary-button>
         </div>
     </form>
+
+    <a href="{{ route('register') }}" class="btn btn-primary m-10"  >
+        Register
+    </a>
+
+
+
+
 </x-guest-layout>

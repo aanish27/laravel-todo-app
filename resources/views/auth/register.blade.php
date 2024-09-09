@@ -49,4 +49,8 @@
             </x-primary-button>
         </div>
     </form>
+
+    <a href="{{ route('login') }}" class="btn btn-primary mt-2"  >
+        Login
+    </a>
 </x-guest-layout>
