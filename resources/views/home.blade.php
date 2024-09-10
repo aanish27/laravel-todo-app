@@ -140,15 +140,15 @@
 
 
                                 <select class=" form-control m-2" name="priority" id="priority" aria-placeholder="Priority">
-                                    <option value="low">Low</option>
-                                    <option value="medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
                                     <option value="High">High</option>
                                 </select>
 
                                 <input type="checkbox" class=" form-control m-2" name="statusChecked" value="true" >
                                 <input type="hidden" name="status" value="false">
 
-                                <input type="hidden" value="1" name="project_id">
+                                <input type="hidden" value="7" name="project_id">
                                 <button type="submit" class="btn btn-primary m-2"> Add </button>
                             </form>
 
@@ -161,8 +161,8 @@
                       </div>
             </div>
 
-
         </div>
+
         {{-- <script>
             const objDiv = document.getElementById("btn-project-create")
             objDiv.addEventlistener('onclick' , () => {
