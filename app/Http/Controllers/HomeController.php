@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'projects' => Project::all(),
-            'tasks' => Task::all()  
+            'tasks' => Task::all()
         ]);
     }
 

@@ -1,7 +1,7 @@
 <div class="project card text-center  p-2  m-3 w-75 " >
     <b>{{ $project->title }}</b>
 
-    <div class="project-content toggle{{ $project->title }}">
+    <div class="project-content">
         <div>{{ $project->description }}</div>
 
         <button class="d-inline btn edit" data-bs-toggle="modal" data-bs-target="#btn-project-edit-{{ $project->id }}" >            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-pencil-square" viewBox="0 0 16 16">

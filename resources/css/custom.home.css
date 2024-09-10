@@ -21,10 +21,11 @@ table, tbody, tr, th, td{
 
 }
 
-table{
+.tasks{
     margin-left: 65px !important;
     width: auto ;
-
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 input[type="checkbox"] {
@@ -38,5 +39,16 @@ input[type="checkbox"] {
   .project-title{
     font-size: 90px;
     margin: 65px;
+    margin-top: 26px;
     margin-bottom: 10px;
   }
+
+
+.w-90{
+    width: 90%;
+}
+
+
+.title-bg-color{
+    background-color: #000000;
+}
