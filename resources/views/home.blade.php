@@ -81,7 +81,7 @@
             <div class="bord-content  w-90 h-75 overflow-hide">
                     <h1 class="project-title ">Reminders</h1>
                     <div class="tasks h-75  position-fixed ">
-                        <div class="task row fs-5 text-light sticky-top title-bg-color fw-bold">
+                        <div class="task row fs-4 text-light sticky-top title-bg-color fw-bold">
                             <div class="col-3 ">
                                 Task
                             </div>
@@ -116,17 +116,50 @@
                     </div>
 
 
-                    <a href="{{ route('task.create') }}" class="btn btn-primary rounded-circle p-0 position-fixed" style="bottom: 20px; right: 20px;"  >
+                    <button  class="btn btn-primary rounded-circle p-0 position-fixed" style="bottom: 20px; right: 20px;" data-bs-toggle="modal" data-bs-target="#modal-task-create"  >
                         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
                           </svg>
-                    </a>
-            </div>
+                    </button>
 
-            <ul>
-                <a href="{{ route('task.index') }} " class="btn ">Task</a>
-                <a href="{{ route('project.index') }}" class="btn">Project</a>
-            </ul>
+                    <div class="modal fade" id="modal-task-create" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <button type="button" class="btn-close m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h3 class="text-center text-dark">Add Task</h3>
+                            <div class="modal-body">
+                                <form
+                                action="{{ route('task.store') }}"
+                                method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+
+
+                                <input type="text" class=" form-control m-2" name="title" placeholder="Title" required>
+                                <input type="text" class=" form-control m-2" name="description" placeholder="Description">
+
+
+                                <select class=" form-control m-2" name="priority" id="priority" aria-placeholder="Priority">
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+
+                                <input type="checkbox" class=" form-control m-2" name="statusChecked" value="true" >
+                                <input type="hidden" name="status" value="false">
+
+                                <input type="hidden" value="1" name="project_id">
+                                <button type="submit" class="btn btn-primary m-2"> Add </button>
+                            </form>
+
+
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+            </div>
 
 
         </div>

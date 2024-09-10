@@ -16,7 +16,7 @@
         @csrf
 
         <label for="title">Title</label>
-        <input type="text" name="title">
+        <input type="text" name="title" required>
 
         <label for="description">Description</label>
         <input type="text" name="description">
@@ -28,26 +28,14 @@
             <option value="High">High</option>
         </select>
 
-        <label for="priority">Priority</label>
-        <select name="priority" id="priority">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="High">High</option>
-        </select>
+
 
         <label for="status">Status</label>
-
-        <input type="hidden" name="status" value="true">
-
-
+        <input type="checkbox" name="statusChecked" value="true">
+        <input type="hidden" name="status" value="false">
 
         <input type="hidden" value="1" name="project_id">
-
-        <button
-            type="submit"
-        >
-            Add
-        </button>
+        <button type="submit" class="btn btn-primary"> Add </button>
     </form>
 
 </body>

@@ -31,6 +31,13 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->statusChecked == "true")
+            {
+                $status = 'true';
+            }
+            else{
+                $status = 'false';
+            }
 
 
         Task::create([
@@ -39,12 +46,15 @@ class TaskController extends Controller
             'priority' => $request -> priority,
             'user_id' => Auth::id(),
             'project_id' => $request->project_id,
-            
+            'status' => $status
+
+
+
 
         ]);
 
 
-        return redirect(route('task.index'));
+        return redirect(route('index'));
     }
 
     /**
@@ -75,7 +85,7 @@ class TaskController extends Controller
             '_token' , '_method','project_id'
         ]));
 
-        return redirect(route('task.index'));
+        return redirect(route('index'));
     }
 
     /**
@@ -84,6 +94,6 @@ class TaskController extends Controller
     public function destroy(string $id)
     {
         Task::where('id', $id)->delete();
-        return redirect(route('task.index'));
+        return redirect(route('index'));
     }
 }
